@@ -9,13 +9,13 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
-@RestController("/search")
+@RestController
 @RequiredArgsConstructor
 public class SearchController {
 
   @NonNull private final SearchService searchService;
 
-  @PostMapping
+  @PostMapping(("/search"))
   public SearchResultDto searchAccordingToFilter(@RequestBody SearchFilterDto searchFilterDto) {
     return searchService.calculate(searchFilterDto);
   }

@@ -7,11 +7,12 @@ import com.gmb.data.dictionary.board.Profile;
 import com.gmb.data.dictionary.board.Shape;
 import com.gmb.data.model.Board;
 import java.util.List;
-import org.springframework.data.repository.CrudRepository;
+import org.springframework.data.repository.PagingAndSortingRepository;
 import org.springframework.stereotype.Repository;
 
 @Repository
-public interface BoardRepository extends EquipmentRepository<Board>, CrudRepository<Board, Long> {
+public interface BoardRepository
+    extends EquipmentRepository<Board>, PagingAndSortingRepository<Board, Long> {
 
   List<Board> findByLength(Integer length);
 

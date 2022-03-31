@@ -1,6 +1,5 @@
 package com.gmb.data.dto;
 
-import java.util.List;
 import lombok.Builder;
 import lombok.Value;
 
@@ -8,7 +7,6 @@ import lombok.Value;
 @Builder
 public class SearchResultDto {
 
-  List<BoardDto> boards;
-  List<BindingsDto> bindings;
-  List<BootsDto> boots;
+  Integer length;
+  String type;
 }

@@ -7,6 +7,8 @@ import java.util.Collection;
 import java.util.Optional;
 import lombok.NonNull;
 import lombok.RequiredArgsConstructor;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
 @Service
@@ -25,6 +27,11 @@ public class BindingsService implements EquipmentService<Bindings> {
     Collection<Bindings> coll = new ArrayList<>();
     bindingsRepository.findAll().forEach(coll::add);
     return coll;
+  }
+
+  @Override
+  public Page<Bindings> findAll(Pageable pageable) {
+    return bindingsRepository.findAll(pageable);
   }
 
   @Override
